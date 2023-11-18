@@ -1,22 +1,13 @@
 package com.iamkhs.book.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.*;
-
 import java.io.Serializable;
 
-@Entity
 public class Author implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String firstName;
     private String lastName;
     private String address;
-
-    @OneToOne(mappedBy = "author")
-    @JsonBackReference
     private Book book;
 
     public Author() {
